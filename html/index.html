@@ -1,0 +1,412 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Practical Programs</title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header>
+    <h1>HTML Practical Programs</h1>
+    <p>HTML Fundamentals and Web Development Experiments</p>
+</header>
+
+<div class="container">
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>Program 01</h2>
+            <p>Basic HTML Page</p>
+            <a href="01-basic-page.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 02</h2>
+            <p>HTML Lists</p>
+            <a href="02-lists.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 03</h2>
+            <p>HTML Tables</p>
+            <a href="03-tables.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 04</h2>
+            <p>Images and Hyperlinks</p>
+            <a href="04-images-links.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 05</h2>
+            <p>Student Registration Form</p>
+            <a href="05-registration-form.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 06</h2>
+            <p>Audio and Video Elements</p>
+            <a href="06-audio-video.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 07</h2>
+            <p>Iframe Example</p>
+            <a href="07-iframe.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 08</h2>
+            <p>Semantic HTML Elements</p>
+            <a href="08-semantic-elements.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 09</h2>
+            <p>Different Input Types</p>
+            <a href="09-input-types.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 10</h2>
+            <p>Student Timetable</p>
+            <a href="10-timetable.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 11</h2>
+            <p>Internal and External CSS</p>
+            <a href="11-internal-external-css.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 12</h2>
+            <p>CSS Properties</p>
+            <a href="12-css-properties.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 13</h2>
+            <p>Responsive Webpage</p>
+            <a href="13-responsive.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 14</h2>
+            <p>Bootstrap Example</p>
+            <a href="14-bootstrap.html" class="btn">Open Program</a>
+        </div>
+
+        <div class="card">
+            <h2>Program 15</h2>
+            <p>Personal Portfolio</p>
+            <a href="15-portfolio.html" class="btn">Open Program</a>
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="../index.html" class="btn">← Back to Home</a>
+
+</div>
+
+<footer>
+    <p>HTML Practical Programs | Assign-1</p>
+</footer>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEED // HTML Practicals</title>
+
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #00ff41;
+            --border: #008f11;
+            --hover: #003b00;
+            --scanline: rgba(0, 255, 65, 0.05);
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 2rem;
+            background-image: linear-gradient(var(--scanline) 1px, transparent 1px);
+            background-size: 100% 4px;
+        }
+
+        .back-nav {
+            display: inline-block;
+            color: var(--text);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 8px 15px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .back-nav:hover {
+            background: var(--hover);
+            box-shadow: 0 0 10px var(--border);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 0;
+            color: var(--border);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            background: #0a0a0a;
+            padding: 20px;
+            width: 260px;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* The Blinking REC Symbol */
+        .card::before {
+            content: "• REC";
+            color: #ff0000;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink { 
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; } 
+        }
+
+        .program-number {
+            display: inline-block;
+            background-color: var(--hover);
+            color: var(--text);
+            padding: 3px 8px;
+            border: 1px solid var(--border);
+            font-size: 11px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+            letter-spacing: 1px;
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            border-bottom: 1px dashed var(--hover);
+            padding-bottom: 5px;
+            color: var(--text);
+            text-transform: uppercase;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            flex-grow: 1;
+            margin-bottom: 20px;
+            color: var(--border);
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            border: 1px solid var(--text);
+            color: var(--text);
+            background: transparent;
+            text-decoration: none;
+            padding: 8px;
+            font-weight: bold;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--hover);
+            box-shadow: 0 0 10px var(--border);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px dashed var(--border);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-nav"><< RETURN TO MAIN FEED</a>
+
+<header>
+    <h1>HTML Protocol Archives</h1>
+    <p>STATUS: 15 STRUCTURE FEEDS ONLINE</p>
+</header>
+
+<div class="container">
+    <div class="cards">
+
+        <div class="card">
+            <span class="program-number">PRG 01</span>
+            <h2>Basic HTML Page</h2>
+            <p>HTML Fundamentals</p>
+            <a href="01-basic-page.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 02</span>
+            <h2>HTML Lists</h2>
+            <p>Ordered and Unordered</p>
+            <a href="02-lists.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 03</span>
+            <h2>HTML Tables</h2>
+            <p>Data structure formatting</p>
+            <a href="03-tables.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 04</span>
+            <h2>Images and Hyperlinks</h2>
+            <p>Media and navigation</p>
+            <a href="04-images-links.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 05</span>
+            <h2>Student Registration</h2>
+            <p>Form inputs and structure</p>
+            <a href="05-registration-form.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 06</span>
+            <h2>Audio and Video</h2>
+            <p>Embedded media elements</p>
+            <a href="06-audio-video.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 07</span>
+            <h2>Iframe Example</h2>
+            <p>Nested browsing contexts</p>
+            <a href="07-iframe.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 08</span>
+            <h2>Semantic Elements</h2>
+            <p>Modern HTML5 structure</p>
+            <a href="08-semantic-elements.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 09</span>
+            <h2>Input Types</h2>
+            <p>Advanced form controls</p>
+            <a href="09-input-types.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 10</span>
+            <h2>Student Timetable</h2>
+            <p>Complex table formatting</p>
+            <a href="10-timetable.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 11</span>
+            <h2>Internal/External CSS</h2>
+            <p>Stylesheet integration</p>
+            <a href="11-internal-external-css.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 12</span>
+            <h2>CSS Properties</h2>
+            <p>Basic inline styling</p>
+            <a href="12-css-properties.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 13</span>
+            <h2>Responsive Webpage</h2>
+            <p>Viewport adaptability</p>
+            <a href="13-responsive.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 14</span>
+            <h2>Bootstrap Example</h2>
+            <p>Framework integration</p>
+            <a href="14-bootstrap.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="card">
+            <span class="program-number">PRG 15</span>
+            <h2>Personal Portfolio</h2>
+            <p>Final HTML structure</p>
+            <a href="15-portfolio.html" class="btn">ACCESS FEED</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>SYSTEM LOG // HTML ARCHIVE RENDERED</p>
+</footer>
+
+</body>
+</html>
