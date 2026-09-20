@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEED // JS Practicals</title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #00ff41;
+            --border: #008f11;
+            --hover: #003b00;
+            --scanline: rgba(0, 255, 65, 0.05);
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 2rem;
+            background-image: linear-gradient(var(--scanline) 1px, transparent 1px);
+            background-size: 100% 4px;
+        }
+
+        .back-nav {
+            display: inline-block;
+            color: var(--text);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 8px 15px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .back-nav:hover {
+            background: var(--hover);
+            box-shadow: 0 0 10px var(--border);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            background: #0a0a0a;
+            padding: 20px;
+            width: 260px;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* REC SYMBOL AND ANIMATION REMOVED HERE AS REQUESTED */
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--hover);
+            padding-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            border: 1px solid var(--text);
+            color: var(--text);
+            background: transparent;
+            text-decoration: none;
+            padding: 8px;
+            font-weight: bold;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--hover);
+            box-shadow: 0 0 10px var(--border);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px dashed var(--border);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Minor additions to handle the JS categories/numbering cleanly */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 20px 0;
+            text-transform: uppercase;
+            border-bottom: 1px dashed var(--hover);
+            padding-bottom: 10px;
+        }
+
+        .program-number {
+            display: inline-block;
+            background-color: var(--hover);
+            color: var(--text);
+            padding: 3px 8px;
+            border: 1px solid var(--border);
+            font-size: 11px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+
+<a href="../index.html" class="back-nav"><< RETURN TO MAIN FEED</a>
+
+<header>
+    <h1>JS Protocol Archives</h1>
+    <p>STATUS: MODULES ONLINE // AWAITING INPUT</p>
+</header>
+
+<div class="container">
+
+    <h2 class="section-title">JavaScript Categories</h2>
+
+    <div class="cards">
+        <div class="card">
+            <span class="program-number">DIR 01</span>
+            <h2>Browser Objects</h2>
+            <p>Window, Navigator, Screen, Location, History and Storage objects.</p>
+            <a href="browser/index.html" class="btn">View Programs</a>
+        </div>
+        <div class="card">
+            <span class="program-number">DIR 02</span>
+            <h2>DOM Manipulation</h2>
+            <p>Select, create, modify and remove HTML elements dynamically.</p>
+            <a href="dom/index.html" class="btn">View Programs</a>
+        </div>
+        <div class="card">
+            <span class="program-number">DIR 03</span>
+            <h2>JavaScript Events</h2>
+            <p>Click, mouse, keyboard, submit, change and load events.</p>
+            <a href="events/index.html" class="btn">View Programs</a>
+        </div>
+        <div class="card">
+            <span class="program-number">DIR 04</span>
+            <h2>Forms & Validation</h2>
+            <p>Registration, login, password and feedback validation programs.</p>
+            <a href="forms/index.html" class="btn">View Programs</a>
+        </div>
+        <div class="card">
+            <span class="program-number">DIR 05</span>
+            <h2>Mini Projects</h2>
+            <p>Interactive and practical JavaScript mini projects.</p>
+            <a href="mini-projects/index.html" class="btn">View Projects</a>
+        </div>
+        <div class="card">
+            <span class="program-number">DIR 06</span>
+            <h2>Node.js</h2>
+            <p>Server-side JavaScript and Node.js practical experiments.</p>
+            <a href="nodejs/index.html" class="btn">View Node.js</a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Core JavaScript Programs 01–67</h2>
+
+    <div class="cards">
+        <div class="card">
+            <span class="program-number">EXE 01</span>
+            <h2>Hello World</h2>
+            <p>Introduction to JavaScript</p>
+            <a href="01-hello-world.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 02</span>
+            <h2>Variables</h2>
+            <p>Working with variables</p>
+            <a href="02-variables.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 03</span>
+            <h2>Data Types</h2>
+            <p>JavaScript data types</p>
+            <a href="03-data-types.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 04</span>
+            <h2>Operators</h2>
+            <p>Arithmetic and logical operators</p>
+            <a href="04-operators.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 05</span>
+            <h2>Input and Output</h2>
+            <p>Taking and displaying data</p>
+            <a href="05-input-output.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 06</span>
+            <h2>Conditional Statements</h2>
+            <p>Using if and else conditions</p>
+            <a href="06-conditional-statements.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 07</span>
+            <h2>Switch Statement</h2>
+            <p>Multiple case selection</p>
+            <a href="07-switch-statement.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 08</span>
+            <h2>For Loop</h2>
+            <p>Iteration using for loop</p>
+            <a href="08-for-loop.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 09</span>
+            <h2>While Loop</h2>
+            <p>Iteration using while loop</p>
+            <a href="09-while-loop.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 10</span>
+            <h2>Do While Loop</h2>
+            <p>Do while iteration</p>
+            <a href="10-do-while-loop.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 11</span>
+            <h2>Functions</h2>
+            <p>Creating JavaScript functions</p>
+            <a href="11-functions.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 12</span>
+            <h2>Arrow Functions</h2>
+            <p>Modern function syntax</p>
+            <a href="12-arrow-functions.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 13</span>
+            <h2>Arrays</h2>
+            <p>Working with arrays</p>
+            <a href="13-arrays.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 14</span>
+            <h2>Array Methods</h2>
+            <p>Common array methods</p>
+            <a href="14-array-methods.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 15</span>
+            <h2>Objects</h2>
+            <p>JavaScript objects</p>
+            <a href="15-objects.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 16</span>
+            <h2>String Methods</h2>
+            <p>Working with string methods</p>
+            <a href="16-string-methods.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 17</span>
+            <h2>Number Methods</h2>
+            <p>Working with number methods</p>
+            <a href="17-number-methods.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 18</span>
+            <h2>Date Object</h2>
+            <p>Working with date and time</p>
+            <a href="18-date-object.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 19</span>
+            <h2>Math Object</h2>
+            <p>Mathematical operations</p>
+            <a href="19-math-object.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 20</span>
+            <h2>Mini Calculator</h2>
+            <p>Simple calculator program</p>
+            <a href="20-mini-calculator.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 21</span>
+            <h2>Ternary Operator</h2>
+            <p>Short conditional operator</p>
+            <a href="21-ternary-operator.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 22</span>
+            <h2>Logical Operators</h2>
+            <p>AND, OR and NOT operators</p>
+            <a href="22-logical-operators.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 23</span>
+            <h2>Type Conversion</h2>
+            <p>Converting data types</p>
+            <a href="23-type-conversion.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 24</span>
+            <h2>Template Literals</h2>
+            <p>Modern string formatting</p>
+            <a href="24-template-literals.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 25</span>
+            <h2>Spread Operator</h2>
+            <p>Using the spread operator</p>
+            <a href="25-spread-operator.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 26</span>
+            <h2>Rest Operator</h2>
+            <p>Using rest parameters</p>
+            <a href="26-rest-operator.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 27</span>
+            <h2>Destructuring</h2>
+            <p>Array and object destructuring</p>
+            <a href="27-destructuring.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 28</span>
+            <h2>Map Method</h2>
+            <p>Using the map method</p>
+            <a href="28-map-method.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 29</span>
+            <h2>Filter Method</h2>
+            <p>Using the filter method</p>
+            <a href="29-filter-method.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 30</span>
+            <h2>Reduce Method</h2>
+            <p>Using the reduce method</p>
+            <a href="30-reduce-method.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 31</span>
+            <h2>Find Method</h2>
+            <p>Finding array elements</p>
+            <a href="31-find-method.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 32</span>
+            <h2>Some Method</h2>
+            <p>Checking some elements</p>
+            <a href="32-some-method.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 33</span>
+            <h2>Every Method</h2>
+            <p>Checking every element</p>
+            <a href="33-every-method.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 34</span>
+            <h2>Sort Method</h2>
+            <p>Sorting array elements</p>
+            <a href="34-sort-method.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 35</span>
+            <h2>Reverse Method</h2>
+            <p>Reversing array elements</p>
+            <a href="35-reverse-method.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 36</span>
+            <h2>Set Object</h2>
+            <p>Working with Set objects</p>
+            <a href="36-set-object.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 37</span>
+            <h2>Map Object</h2>
+            <p>Working with Map objects</p>
+            <a href="37-map-object.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 38</span>
+            <h2>For Of Loop</h2>
+            <p>Iterating iterable objects</p>
+            <a href="38-for-of-loop.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 39</span>
+            <h2>For In Loop</h2>
+            <p>Iterating object properties</p>
+            <a href="39-for-in-loop.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 40</span>
+            <h2>Optional Chaining</h2>
+            <p>Safe property access</p>
+            <a href="40-optional-chaining.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 41</span>
+            <h2>Nullish Coalescing</h2>
+            <p>Handling null values</p>
+            <a href="41-nullish-coalescing.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 42</span>
+            <h2>Strict Equality</h2>
+            <p>Strict comparison operators</p>
+            <a href="42-strict-equality.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 43</span>
+            <h2>Exception Handling</h2>
+            <p>Handling JavaScript errors</p>
+            <a href="43-exception-handling.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 44</span>
+            <h2>Throw Statement</h2>
+            <p>Creating custom errors</p>
+            <a href="44-throw-statement.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 45</span>
+            <h2>Callback Function</h2>
+            <p>Using callback functions</p>
+            <a href="45-callback-function.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 46</span>
+            <h2>Set Timeout</h2>
+            <p>Delayed execution</p>
+            <a href="46-settimeout.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 47</span>
+            <h2>Set Interval</h2>
+            <p>Repeated execution</p>
+            <a href="47-setinterval.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 48</span>
+            <h2>Promise</h2>
+            <p>Working with promises</p>
+            <a href="48-promise.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 49</span>
+            <h2>Async Await</h2>
+            <p>Asynchronous JavaScript</p>
+            <a href="49-async-await.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 50</span>
+            <h2>JSON Object</h2>
+            <p>Working with JSON data</p>
+            <a href="50-json-object.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 51</span>
+            <h2>Fetch API</h2>
+            <p>Fetching data from APIs</p>
+            <a href="51-fetch-api.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 52</span>
+            <h2>Local Date and Time</h2>
+            <p>Displaying local date and time</p>
+            <a href="52-local-date-time.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 53</span>
+            <h2>Digital Clock</h2>
+            <p>Live digital clock</p>
+            <a href="53-digital-clock.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 54</span>
+            <h2>Countdown Timer</h2>
+            <p>Countdown timer project</p>
+            <a href="54-countdown-timer.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 55</span>
+            <h2>Random Number</h2>
+            <p>Generating random numbers</p>
+            <a href="55-random-number.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 56</span>
+            <h2>Palindrome Checker</h2>
+            <p>Checking palindrome values</p>
+            <a href="56-palindrome-checker.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 57</span>
+            <h2>Prime Number</h2>
+            <p>Checking prime numbers</p>
+            <a href="57-prime-number.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 58</span>
+            <h2>Factorial</h2>
+            <p>Calculating factorial</p>
+            <a href="58-factorial.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 59</span>
+            <h2>Fibonacci Series</h2>
+            <p>Generating Fibonacci series</p>
+            <a href="59-fibonacci-series.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 60</span>
+            <h2>Armstrong Number</h2>
+            <p>Checking Armstrong numbers</p>
+            <a href="60-armstrong-number.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 61</span>
+            <h2>Reverse Number</h2>
+            <p>Reversing a number</p>
+            <a href="61-reverse-number.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 62</span>
+            <h2>Sum of Digits</h2>
+            <p>Calculating digit sum</p>
+            <a href="62-sum-of-digits.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 63</span>
+            <h2>Multiplication Table</h2>
+            <p>Generating multiplication tables</p>
+            <a href="63-multiplication-table.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 64</span>
+            <h2>Vowel Counter</h2>
+            <p>Counting vowels in text</p>
+            <a href="64-vowel-counter.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 65</span>
+            <h2>Character Counter</h2>
+            <p>Counting characters</p>
+            <a href="65-character-counter.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 66</span>
+            <h2>Word Counter</h2>
+            <p>Counting words in a sentence</p>
+            <a href="66-word-counter.html" class="btn">Execute</a>
+        </div>
+        <div class="card">
+            <span class="program-number">EXE 67</span>
+            <h2>Simple Quiz</h2>
+            <p>Interactive quiz program</p>
+            <a href="67-simple-quiz.html" class="btn">Execute</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>SYSTEM LOG // JS ARCHIVE RENDERED</p>
+</footer>
+
+</body>
+</html>

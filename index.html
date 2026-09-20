@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM.DASHBOARD // Practicals</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #00ff41; /* Terminal Green */
+            --border: #008f11;
+            --hover: #003b00;
+            --scanline: rgba(0, 255, 65, 0.05);
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 3rem;
+            background-image: linear-gradient(var(--scanline) 1px, transparent 1px);
+            background-size: 100% 4px;
+        }
+
+        .sys-header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .sys-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+        }
+
+        .grid {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cam-card {
+            border: 1px solid var(--border);
+            background: #0a0a0a;
+            padding: 25px;
+            width: 300px;
+            position: relative;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Surveillance REC blinking effect */
+        .cam-card::before {
+            content: "• REC";
+            color: #ff0000;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink { 
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; } 
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            border: 1px solid var(--text);
+            color: var(--text);
+            background: transparent;
+            text-decoration: none;
+            padding: 12px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: var(--hover);
+            box-shadow: 0 0 10px var(--border);
+        }
+
+        .sys-footer {
+            margin-top: 50px;
+            font-size: 14px;
+            text-align: center;
+            border-top: 1px dashed var(--border);
+            padding-top: 15px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sys-header">
+        <h1>SYS.MONITOR // Web Tech Practicals</h1>
+        <p>STATUS: ACTIVE // FEED: LIVE</p>
+    </div>
+
+    <div class="grid">
+        <div class="cam-card">
+            <h2>CAM 01: HTML</h2>
+            <p>Core structure feeds. Raw unstyled node data.</p>
+            <a href="html/index.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="cam-card">
+            <h2>CAM 02: CSS</h2>
+            <p>Styling protocols and visual environment overrides.</p>
+            <a href="css/index.html" class="btn">ACCESS FEED</a>
+        </div>
+
+        <div class="cam-card">
+            <h2>CAM 03: JS</h2>
+            <p>Dynamic logic, browser objects, and interactive scripts.</p>
+            <a href="javascript/index.html" class="btn">ACCESS FEED</a>
+        </div>
+    </div>
+
+    <div class="sys-footer">
+        OPERATOR: Bhavyan.P | ID: CDS/2025/1602 | SEC 5
+    </div>
+
+</body>
+</html>
